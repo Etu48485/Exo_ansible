@@ -1,0 +1,1 @@
+vm2 ansible_user=vagrant ansible_ssh_private_key_file=/home/vagrant/.ssh/deploy_rsa

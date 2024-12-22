@@ -1,0 +1,49 @@
+---
+- name: Ansible Playbook for Command Tasks
+  hosts: all
+#  become: yes
+  tasks:
+
+    - name: Récupérer la disponibilité
+      command: uptime
+      register: uptime_output
+
+    - name: Display uptime output
+      debug:
+        var: uptime_output.stdout
+#####################################################################
+    - name: Get the last 3 lines of the SSH connection log
+      become: yes
+      command: tail -n 3 /var/log/auth.log
+      register: log_output
+      ignore_errors: yes  # In case the file doesn't exist
+
+    - name: Display log output
+      debug:
+        var: log_output.stdout
+###################################################################
+    - name: Create a file named "moi"
+      become: yes
+      command: touch /tmp/moi
+      register: create_file_output
+
+    - name: Display file creation confirmation
+      debug:
+        var: create_file_output.stdout
+####################################################################
+    - name: Check which user is connected via SSH
+      command: who
+      register: who_output
+
+    - name: Display connected users
+      debug:
+        var: who_output.stdout
+#####################################################################
+    - name: Check which user is connected via SSH with elevated privileges
+      command: who
+      become: yes
+      register: who_sudo_output
+
+    - name: Display connected users with sudo
+      debug:
+        var: who_sudo_output.stdout

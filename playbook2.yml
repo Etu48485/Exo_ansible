@@ -1,0 +1,17 @@
+---
+- name: Add deploy user to sudoers without password prompt
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure deploy user can run sudo without password
+      lineinfile:
+        path: /etc/sudoers
+        line: 'deploy ALL=(ALL:ALL) NOPASSWD: ALL'
+      tags: tache1
+
+    - name: Copier un fichier distant vers la machine locale
+      fetch:
+        src: /etc/sudoers
+        dest: /home/vagrant/projet-ansible/test/toto.txt
+        flat: yes
+      tags: tache2

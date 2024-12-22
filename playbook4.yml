@@ -1,0 +1,26 @@
+---
+- name: Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local
+  hosts: all
+  become: yes
+  gather_facts: yes  # Assure-toi de collecter les faits système
+  tasks:
+    - name: Vérifier si l'entrée existe déjà dans /etc/hosts
+      command: grep '127.0.0.1 henallux.local' /etc/hosts
+      register: grep_result
+      ignore_errors: yes
+
+    - name: Ajouter l'entrée dans /etc/hosts si elle n'existe pas
+      lineinfile:
+        path: /etc/hosts
+        line: "127.0.0.1 henallux.local"
+        create: yes
+      when: grep_result.rc != 0
+      notify:
+        - Redémarrer le service réseau
+
+  handlers:
+    - name: Redémarrer le service réseau
+      service:
+        name: networking
+        state: restarted
+      when: ansible_facts['os_family'] == "Debian"  # Utilisation de ansible_facts['os_family'] pour vérifier le système

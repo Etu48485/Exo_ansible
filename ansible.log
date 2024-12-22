@@ -1,0 +1,463 @@
+2024-12-21 21:11:39,684 p=1140 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ********************************************************
+2024-12-21 21:11:39,719 p=1140 u=vagrant n=ansible | TASK [Gathering Facts] ***************************************************************************
+2024-12-21 21:11:42,811 p=1140 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 21:11:42,857 p=1140 u=vagrant n=ansible | TASK [Récupérer la disponibilité] ****************************************************************
+2024-12-21 21:11:44,305 p=1140 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:11:44,333 p=1140 u=vagrant n=ansible | TASK [Display uptime output] *********************************************************************
+2024-12-21 21:11:44,456 p=1140 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 21:11:49 up  1:19,  2 users,  load average: 0.18, 0.07, 0.02"
+}
+2024-12-21 21:11:44,479 p=1140 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ********************************************
+2024-12-21 21:11:45,716 p=1140 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:11:45,747 p=1140 u=vagrant n=ansible | TASK [Display log output] ************************************************************************
+2024-12-21 21:11:45,823 p=1140 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "Dec 21 21:11:45 vm2 systemd-logind[300]: New session 10 of user vagrant.\nDec 21 21:11:50 vm2 sudo:  vagrant : TTY=pts/1 ; PWD=/home/vagrant ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-qjozobgfnfqxoxmbudrsyfxxhfghqwfs ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1734815504.6442275-1167-73750557735703/AnsiballZ_command.py\nDec 21 21:11:50 vm2 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by vagrant(uid=1000)"
+}
+2024-12-21 21:11:45,849 p=1140 u=vagrant n=ansible | TASK [Create a file named "moi"] *****************************************************************
+2024-12-21 21:11:46,905 p=1140 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": true, "cmd": ["touch", "/tmp/moi"], "delta": "0:00:00.017173", "end": "2024-12-21 21:11:52.279967", "msg": "non-zero return code", "rc": 1, "start": "2024-12-21 21:11:52.262794", "stderr": "touch: cannot touch '/tmp/moi': Permission denied", "stderr_lines": ["touch: cannot touch '/tmp/moi': Permission denied"], "stdout": "", "stdout_lines": []}
+2024-12-21 21:11:46,912 p=1140 u=vagrant n=ansible | PLAY RECAP ***************************************************************************************
+2024-12-21 21:11:46,913 p=1140 u=vagrant n=ansible | vm2                        : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-21 21:16:04,720 p=1192 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ********************************************************
+2024-12-21 21:16:04,760 p=1192 u=vagrant n=ansible | TASK [Gathering Facts] ***************************************************************************
+2024-12-21 21:16:08,141 p=1192 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 21:16:08,187 p=1192 u=vagrant n=ansible | TASK [Récupérer la disponibilité] ****************************************************************
+2024-12-21 21:16:09,779 p=1192 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:16:09,809 p=1192 u=vagrant n=ansible | TASK [Display uptime output] *********************************************************************
+2024-12-21 21:16:09,875 p=1192 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 21:16:15 up  1:23,  2 users,  load average: 0.08, 0.04, 0.01"
+}
+2024-12-21 21:16:09,901 p=1192 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ********************************************
+2024-12-21 21:16:10,860 p=1192 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:16:10,882 p=1192 u=vagrant n=ansible | TASK [Display log output] ************************************************************************
+2024-12-21 21:16:10,962 p=1192 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "Dec 21 21:16:10 vm2 systemd-logind[300]: New session 11 of user vagrant.\nDec 21 21:16:15 vm2 sudo:  vagrant : TTY=pts/1 ; PWD=/home/vagrant ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-gfvldujbtncubhidrcccuonjlizbrkuo ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1734815770.0331497-1220-181496718588432/AnsiballZ_command.py\nDec 21 21:16:15 vm2 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by vagrant(uid=1000)"
+}
+2024-12-21 21:16:10,984 p=1192 u=vagrant n=ansible | TASK [Create a file named "moi"] *****************************************************************
+2024-12-21 21:16:12,150 p=1192 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:16:12,181 p=1192 u=vagrant n=ansible | TASK [Display file creation confirmation] ********************************************************
+2024-12-21 21:16:12,256 p=1192 u=vagrant n=ansible | ok: [vm2] => {
+    "create_file_output.stdout": ""
+}
+2024-12-21 21:16:12,277 p=1192 u=vagrant n=ansible | TASK [Check which user is connected via SSH] *****************************************************
+2024-12-21 21:16:13,239 p=1192 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:16:13,266 p=1192 u=vagrant n=ansible | TASK [Display connected users] *******************************************************************
+2024-12-21 21:16:13,377 p=1192 u=vagrant n=ansible | ok: [vm2] => {
+    "who_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:16 (192.168.200.200)"
+}
+2024-12-21 21:16:13,398 p=1192 u=vagrant n=ansible | TASK [Check which user is connected via SSH with elevated privileges] ****************************
+2024-12-21 21:16:14,499 p=1192 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:16:14,522 p=1192 u=vagrant n=ansible | TASK [Display connected users with sudo] *********************************************************
+2024-12-21 21:16:14,615 p=1192 u=vagrant n=ansible | ok: [vm2] => {
+    "who_sudo_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:16 (192.168.200.200)"
+}
+2024-12-21 21:16:14,657 p=1192 u=vagrant n=ansible | PLAY RECAP ***************************************************************************************
+2024-12-21 21:16:14,658 p=1192 u=vagrant n=ansible | vm2                        : ok=11   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 21:17:01,949 p=1266 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 21:17:01,988 p=1266 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 21:17:04,783 p=1266 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 21:17:04,852 p=1266 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-21 21:17:06,337 p=1266 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:17:06,355 p=1266 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-21 21:17:06,472 p=1266 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 21:17:11 up  1:24,  2 users,  load average: 0.03, 0.03, 0.00"
+}
+2024-12-21 21:17:06,506 p=1266 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-21 21:17:07,484 p=1266 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:17:07,506 p=1266 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-21 21:17:07,586 p=1266 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "Dec 21 21:17:01 vm2 CRON[2017]: pam_unix(cron:session): session closed for user root\nDec 21 21:17:12 vm2 sudo:  vagrant : TTY=pts/1 ; PWD=/home/vagrant ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-vpambpgvmtaeduvukggihknduhcinpqj ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1734815826.624899-1293-112929258495730/AnsiballZ_command.py\nDec 21 21:17:12 vm2 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by vagrant(uid=1000)"
+}
+2024-12-21 21:17:07,609 p=1266 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-21 21:17:08,595 p=1266 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:17:08,629 p=1266 u=vagrant n=ansible | TASK [Display file creation confirmation] ******************************************************************************************************************
+2024-12-21 21:17:08,714 p=1266 u=vagrant n=ansible | ok: [vm2] => {
+    "create_file_output.stdout": ""
+}
+2024-12-21 21:17:08,734 p=1266 u=vagrant n=ansible | TASK [Check which user is connected via SSH] ***************************************************************************************************************
+2024-12-21 21:17:09,741 p=1266 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:17:09,766 p=1266 u=vagrant n=ansible | TASK [Display connected users] *****************************************************************************************************************************
+2024-12-21 21:17:09,874 p=1266 u=vagrant n=ansible | ok: [vm2] => {
+    "who_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:17 (192.168.200.200)"
+}
+2024-12-21 21:17:09,908 p=1266 u=vagrant n=ansible | TASK [Check which user is connected via SSH with elevated privileges] **************************************************************************************
+2024-12-21 21:17:10,969 p=1266 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:17:11,000 p=1266 u=vagrant n=ansible | TASK [Display connected users with sudo] *******************************************************************************************************************
+2024-12-21 21:17:11,098 p=1266 u=vagrant n=ansible | ok: [vm2] => {
+    "who_sudo_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:17 (192.168.200.200)"
+}
+2024-12-21 21:17:11,139 p=1266 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 21:17:11,140 p=1266 u=vagrant n=ansible | vm2                        : ok=11   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 21:51:58,025 p=1388 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 21:51:58,055 p=1388 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 21:52:01,833 p=1388 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 21:52:01,879 p=1388 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-21 21:52:03,180 p=1388 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:52:03,219 p=1388 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-21 21:52:03,337 p=1388 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 21:52:08 up  1:59,  2 users,  load average: 0.00, 0.00, 0.00"
+}
+2024-12-21 21:52:03,361 p=1388 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-21 21:52:04,524 p=1388 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:52:04,544 p=1388 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-21 21:52:04,675 p=1388 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "Dec 21 21:52:03 vm2 systemd-logind[300]: New session 13 of user vagrant.\nDec 21 21:52:09 vm2 sudo:  vagrant : TTY=pts/1 ; PWD=/home/vagrant ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-uxmpkjhibbsicszmvwmjshfnvduuzoem ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1734817923.54579-1415-173288893424861/AnsiballZ_command.py\nDec 21 21:52:09 vm2 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by vagrant(uid=1000)"
+}
+2024-12-21 21:52:04,703 p=1388 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-21 21:52:05,739 p=1388 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:52:05,764 p=1388 u=vagrant n=ansible | TASK [Display file creation confirmation] ******************************************************************************************************************
+2024-12-21 21:52:05,855 p=1388 u=vagrant n=ansible | ok: [vm2] => {
+    "create_file_output.stdout": ""
+}
+2024-12-21 21:52:05,890 p=1388 u=vagrant n=ansible | TASK [Check which user is connected via SSH] ***************************************************************************************************************
+2024-12-21 21:52:06,828 p=1388 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:52:06,861 p=1388 u=vagrant n=ansible | TASK [Display connected users] *****************************************************************************************************************************
+2024-12-21 21:52:06,942 p=1388 u=vagrant n=ansible | ok: [vm2] => {
+    "who_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:52 (192.168.200.200)"
+}
+2024-12-21 21:52:06,961 p=1388 u=vagrant n=ansible | TASK [Check which user is connected via SSH with elevated privileges] **************************************************************************************
+2024-12-21 21:52:07,928 p=1388 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 21:52:07,949 p=1388 u=vagrant n=ansible | TASK [Display connected users with sudo] *******************************************************************************************************************
+2024-12-21 21:52:08,077 p=1388 u=vagrant n=ansible | ok: [vm2] => {
+    "who_sudo_output.stdout": "vagrant  pts/0        2024-12-21 21:01 (10.0.2.2)\nvagrant  pts/1        2024-12-21 21:52 (192.168.200.200)"
+}
+2024-12-21 21:52:08,128 p=1388 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 21:52:08,129 p=1388 u=vagrant n=ansible | vm2                        : ok=11   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 21:54:27,927 p=1467 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 21:54:27,966 p=1467 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 21:54:28,224 p=1467 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: /home/deploy/.ssh/id_rsa: No such file or directory\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 21:54:28,228 p=1467 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 21:54:28,229 p=1467 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 21:57:21,007 p=1501 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 21:57:21,049 p=1501 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 21:57:21,307 p=1501 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0777 for '/vagrant/cle_deploy/id_rsa' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"/vagrant/cle_deploy/id_rsa\": bad permissions\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 21:57:21,315 p=1501 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 21:57:21,315 p=1501 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 22:04:13,611 p=1581 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 22:04:13,651 p=1581 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 22:04:13,943 p=1581 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0777 for '/vagrant/cle_deploy/id_rsa' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"/vagrant/cle_deploy/id_rsa\": bad permissions\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 22:04:13,951 p=1581 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 22:04:13,953 p=1581 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 22:05:08,066 p=1592 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 22:05:08,094 p=1592 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 22:05:08,385 p=1592 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: /home/deploy/.ssh/id_rsa: Permission denied\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 22:05:08,389 p=1592 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 22:05:08,391 p=1592 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 22:05:20,797 p=1601 u=root n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 22:05:20,826 p=1601 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 22:05:21,062 p=1601 u=root n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname vm2: Name or service not known", "unreachable": true}
+2024-12-21 22:05:21,066 p=1601 u=root n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 22:05:21,067 p=1601 u=root n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 22:06:56,368 p=1629 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 22:06:56,400 p=1629 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 22:06:56,673 p=1629 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0755 for '/home/vagrant/.ssh/deploy_rsa' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"/home/vagrant/.ssh/deploy_rsa\": bad permissions\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 22:06:56,681 p=1629 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 22:06:56,682 p=1629 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 22:21:55,133 p=1843 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] **************************************
+2024-12-21 22:21:55,166 p=1843 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-12-21 22:21:55,432 p=1843 u=vagrant n=ansible | fatal: [vm2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0755 for '/home/vagrant/.ssh/deploy_rsa' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"/home/vagrant/.ssh/deploy_rsa\": bad permissions\r\ndeploy@192.168.200.201: Permission denied (publickey).", "unreachable": true}
+2024-12-21 22:21:55,446 p=1843 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-12-21 22:21:55,446 p=1843 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-21 23:23:00,571 p=739 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 23:23:00,624 p=739 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 23:23:05,296 p=739 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 23:23:05,342 p=739 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-21 23:23:06,522 p=739 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 23:23:06,547 p=739 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-21 23:23:06,700 p=739 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 23:23:06 up 45 min,  2 users,  load average: 0.08, 0.02, 0.01"
+}
+2024-12-21 23:23:06,724 p=739 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-21 23:23:07,317 p=739 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Missing sudo password"}
+2024-12-21 23:23:07,320 p=739 u=vagrant n=ansible | ...ignoring
+2024-12-21 23:23:07,340 p=739 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-21 23:23:07,417 p=739 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "VARIABLE IS NOT DEFINED!"
+}
+2024-12-21 23:23:07,437 p=739 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-21 23:23:07,953 p=739 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Missing sudo password"}
+2024-12-21 23:23:07,959 p=739 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 23:23:07,959 p=739 u=vagrant n=ansible | vm2                        : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-21 23:24:42,133 p=824 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 23:24:42,171 p=824 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 23:24:45,044 p=824 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 23:24:45,083 p=824 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-21 23:24:46,349 p=824 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 23:24:46,371 p=824 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-21 23:24:46,439 p=824 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 23:24:46 up 47 min,  2 users,  load average: 0.01, 0.01, 0.00"
+}
+2024-12-21 23:24:46,466 p=824 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-21 23:24:50,932 p=824 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Incorrect sudo password"}
+2024-12-21 23:24:50,933 p=824 u=vagrant n=ansible | ...ignoring
+2024-12-21 23:24:50,951 p=824 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-21 23:24:51,021 p=824 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "VARIABLE IS NOT DEFINED!"
+}
+2024-12-21 23:24:51,040 p=824 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-21 23:24:53,545 p=824 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Incorrect sudo password"}
+2024-12-21 23:24:53,552 p=824 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 23:24:53,552 p=824 u=vagrant n=ansible | vm2                        : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-21 23:25:01,470 p=872 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-21 23:25:01,510 p=872 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-21 23:25:04,292 p=872 u=vagrant n=ansible | ok: [vm2]
+2024-12-21 23:25:04,358 p=872 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-21 23:25:05,461 p=872 u=vagrant n=ansible | changed: [vm2]
+2024-12-21 23:25:05,485 p=872 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-21 23:25:05,557 p=872 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 23:25:05 up 47 min,  2 users,  load average: 0.09, 0.02, 0.01"
+}
+2024-12-21 23:25:05,591 p=872 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-21 23:25:06,274 p=872 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 192.168.200.201 closed.\r\n", "module_stdout": "\r\nWe trust you have received the usual lecture from the local System\r\nAdministrator. It usually boils down to these three things:\r\n\r\n    #1) Respect the privacy of others.\r\n    #2) Think before you type.\r\n    #3) With great power comes great responsibility.\r\n\r\r\n\r\ndeploy is not in the sudoers file.  This incident will be reported.\r\n", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}
+2024-12-21 23:25:06,274 p=872 u=vagrant n=ansible | ...ignoring
+2024-12-21 23:25:06,305 p=872 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-21 23:25:06,424 p=872 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "VARIABLE IS NOT DEFINED!"
+}
+2024-12-21 23:25:06,445 p=872 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-21 23:25:07,251 p=872 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 192.168.200.201 closed.\r\n", "module_stdout": "\r\ndeploy is not in the sudoers file.  This incident will be reported.\r\n", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}
+2024-12-21 23:25:07,259 p=872 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-21 23:25:07,259 p=872 u=vagrant n=ansible | vm2                        : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-22 00:00:54,220 p=938 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-22 00:00:54,273 p=938 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:00:57,221 p=938 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:00:57,277 p=938 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-22 00:00:58,554 p=938 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:00:58,602 p=938 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-22 00:00:58,764 p=938 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 00:00:58 up  1:23,  2 users,  load average: 0.00, 0.00, 0.00"
+}
+2024-12-22 00:00:58,791 p=938 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-22 00:00:59,396 p=938 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Missing sudo password"}
+2024-12-22 00:00:59,397 p=938 u=vagrant n=ansible | ...ignoring
+2024-12-22 00:00:59,455 p=938 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-22 00:00:59,545 p=938 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "VARIABLE IS NOT DEFINED!"
+}
+2024-12-22 00:00:59,566 p=938 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-22 00:01:00,137 p=938 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Missing sudo password"}
+2024-12-22 00:01:00,142 p=938 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:01:00,142 p=938 u=vagrant n=ansible | vm2                        : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-22 00:02:16,116 p=987 u=vagrant n=ansible | PLAY [Ansible Playbook for Command Tasks] ******************************************************************************************************************
+2024-12-22 00:02:16,161 p=987 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:02:18,681 p=987 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:02:18,723 p=987 u=vagrant n=ansible | TASK [Récupérer la disponibilité] **************************************************************************************************************************
+2024-12-22 00:02:19,809 p=987 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:02:19,846 p=987 u=vagrant n=ansible | TASK [Display uptime output] *******************************************************************************************************************************
+2024-12-22 00:02:19,918 p=987 u=vagrant n=ansible | ok: [vm2] => {
+    "uptime_output.stdout": " 00:02:19 up  1:24,  2 users,  load average: 0.02, 0.01, 0.00"
+}
+2024-12-22 00:02:19,942 p=987 u=vagrant n=ansible | TASK [Get the last 3 lines of the SSH connection log] ******************************************************************************************************
+2024-12-22 00:02:20,819 p=987 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:02:20,843 p=987 u=vagrant n=ansible | TASK [Display log output] **********************************************************************************************************************************
+2024-12-22 00:02:20,948 p=987 u=vagrant n=ansible | ok: [vm2] => {
+    "log_output.stdout": "Dec 22 00:02:16 vm2 systemd-logind[266]: New session 19 of user vagrant.\nDec 22 00:02:20 vm2 sudo:  vagrant : TTY=pts/1 ; PWD=/home/vagrant ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-ejhvnmgxyjjrmqxibaxqkgwryftfmcwm ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1734825740.037871-1014-40740632038783/AnsiballZ_command.py\nDec 22 00:02:20 vm2 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by vagrant(uid=1000)"
+}
+2024-12-22 00:02:20,974 p=987 u=vagrant n=ansible | TASK [Create a file named "moi"] ***************************************************************************************************************************
+2024-12-22 00:02:21,925 p=987 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:02:21,946 p=987 u=vagrant n=ansible | TASK [Display file creation confirmation] ******************************************************************************************************************
+2024-12-22 00:02:22,079 p=987 u=vagrant n=ansible | ok: [vm2] => {
+    "create_file_output.stdout": ""
+}
+2024-12-22 00:02:22,114 p=987 u=vagrant n=ansible | TASK [Check which user is connected via SSH] ***************************************************************************************************************
+2024-12-22 00:02:22,959 p=987 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:02:22,984 p=987 u=vagrant n=ansible | TASK [Display connected users] *****************************************************************************************************************************
+2024-12-22 00:02:23,054 p=987 u=vagrant n=ansible | ok: [vm2] => {
+    "who_output.stdout": "vagrant  pts/0        2024-12-21 22:39 (10.0.2.2)\nvagrant  pts/1        2024-12-22 00:02 (192.168.200.200)"
+}
+2024-12-22 00:02:23,077 p=987 u=vagrant n=ansible | TASK [Check which user is connected via SSH with elevated privileges] **************************************************************************************
+2024-12-22 00:02:24,007 p=987 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:02:24,033 p=987 u=vagrant n=ansible | TASK [Display connected users with sudo] *******************************************************************************************************************
+2024-12-22 00:02:24,111 p=987 u=vagrant n=ansible | ok: [vm2] => {
+    "who_sudo_output.stdout": "vagrant  pts/0        2024-12-21 22:39 (10.0.2.2)\nvagrant  pts/1        2024-12-22 00:02 (192.168.200.200)"
+}
+2024-12-22 00:02:24,157 p=987 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:02:24,157 p=987 u=vagrant n=ansible | vm2                        : ok=11   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:12:47,109 p=1086 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found character that cannot start any token
+
+The error appears to be in '/home/vagrant/projet-ansible/playbook2.yml': line 11, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        line: 'deploy ALL=(ALL:ALL) NOPASSWD: ALL'
+	tags: tache1
+^ here
+There appears to be a tab character at the start of the line.
+
+YAML does not use tabs for formatting. Tabs should be replaced with spaces.
+
+For example:
+    - name: update tooling
+      vars:
+        version: 1.2.3
+#    ^--- there is a tab there.
+
+Should be written as:
+    - name: update tooling
+      vars:
+        version: 1.2.3
+# ^--- all spaces here.
+
+2024-12-22 00:17:30,705 p=1258 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:17:30,758 p=1258 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:17:44,230 p=1258 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2024-12-22 00:17:44,234 p=1258 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:17:44,234 p=1258 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:19:07,142 p=1275 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:19:07,179 p=1275 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:19:20,645 p=1275 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2024-12-22 00:19:20,651 p=1275 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:19:20,652 p=1275 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:19:58,943 p=1298 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:19:58,979 p=1298 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:20:12,252 p=1298 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2024-12-22 00:20:12,255 p=1298 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:20:12,255 p=1298 u=vagrant n=ansible | vm2                        : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:21:49,182 p=1320 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:21:49,283 p=1320 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:21:52,629 p=1320 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:21:52,692 p=1320 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:21:52,692 p=1320 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:23:08,840 p=1349 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:23:08,874 p=1349 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:23:11,528 p=1349 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:23:11,601 p=1349 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:23:11,601 p=1349 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:23:55,151 p=1366 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:23:55,182 p=1366 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:23:57,531 p=1366 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:23:57,573 p=1366 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:23:58,832 p=1366 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (lineinfile) module: tags. Supported parameters include: owner, path (dest, destfile, name), group, selevel, attributes (attr), unsafe_writes, create, backrefs, backup, regexp (regex), serole, insertbefore, mode, insertafter, setype, state, validate, line (value), search_string, firstmatch, seuser."}
+2024-12-22 00:23:58,841 p=1366 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:23:58,842 p=1366 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:24:25,110 p=1392 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:24:25,147 p=1392 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:24:27,545 p=1392 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:24:27,587 p=1392 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:24:28,757 p=1392 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (lineinfile) module: tags. Supported parameters include: validate, insertafter, serole, line (value), state, create, selevel, backrefs, unsafe_writes, regexp (regex), group, search_string, path (dest, destfile, name), mode, insertbefore, seuser, firstmatch, setype, backup, owner, attributes (attr)."}
+2024-12-22 00:24:28,762 p=1392 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:24:28,762 p=1392 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:24:40,832 p=1416 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:24:40,907 p=1416 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:24:43,566 p=1416 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:24:43,615 p=1416 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:24:44,751 p=1416 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (lineinfile) module: tags. Supported parameters include: insertafter, unsafe_writes, regexp (regex), state, owner, search_string, attributes (attr), backrefs, group, insertbefore, setype, seuser, path (dest, destfile, name), line (value), create, selevel, firstmatch, mode, validate, backup, serole."}
+2024-12-22 00:24:44,756 p=1416 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:24:44,756 p=1416 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:28:28,082 p=1454 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:28:28,143 p=1454 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:28:31,129 p=1454 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:28:31,173 p=1454 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:28:32,575 p=1454 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (lineinfile) module: tags. Supported parameters include: search_string, setype, attributes (attr), backrefs, insertbefore, state, backup, regexp (regex), mode, unsafe_writes, seuser, insertafter, create, group, path (dest, destfile, name), owner, selevel, validate, firstmatch, line (value), serole."}
+2024-12-22 00:28:32,586 p=1454 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:28:32,589 p=1454 u=vagrant n=ansible | vm2                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:30:58,423 p=1483 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:30:58,457 p=1483 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:31:04,459 p=1483 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:31:04,516 p=1483 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:31:05,833 p=1483 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:31:05,869 p=1483 u=vagrant n=ansible | TASK [Copier un fichier distant vers la machine locale] ****************************************************************************************************
+2024-12-22 00:31:06,968 p=1483 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
+2024-12-22 00:31:06,974 p=1483 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "dest is an existing directory, use a trailing slash if you want to fetch src into that directory"}
+2024-12-22 00:31:06,977 p=1483 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:31:06,979 p=1483 u=vagrant n=ansible | vm2                        : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:32:57,048 p=1527 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:32:57,086 p=1527 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:32:59,779 p=1527 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:32:59,817 p=1527 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:33:01,206 p=1527 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:33:01,230 p=1527 u=vagrant n=ansible | TASK [Copier un fichier distant vers la machine locale] ****************************************************************************************************
+2024-12-22 00:33:02,702 p=1527 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 00:33:02,751 p=1527 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:33:02,751 p=1527 u=vagrant n=ansible | vm2                        : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-22 00:35:39,479 p=1580 u=vagrant n=ansible | PLAY [Add deploy user to sudoers without password prompt] **************************************************************************************************
+2024-12-22 00:35:39,535 p=1580 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 00:35:42,707 p=1580 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:35:42,748 p=1580 u=vagrant n=ansible | TASK [Ensure deploy user can run sudo without password] ****************************************************************************************************
+2024-12-22 00:35:44,055 p=1580 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:35:44,090 p=1580 u=vagrant n=ansible | TASK [Copier un fichier distant vers la machine locale] ****************************************************************************************************
+2024-12-22 00:35:45,397 p=1580 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 00:35:45,463 p=1580 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 00:35:45,464 p=1580 u=vagrant n=ansible | vm2                        : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-22 13:39:42,066 p=876 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:39:42,103 p=876 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:39:45,287 p=876 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 13:39:45,319 p=876 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:39:46,120 p=876 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": true, "cmd": ["grep", "127.0.0.1 henallux.local", "/etc/hosts"], "delta": "0:00:00.006131", "end": "2024-12-22 13:39:46.047882", "msg": "non-zero return code", "rc": 1, "start": "2024-12-22 13:39:46.041751", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-12-22 13:39:46,122 p=876 u=vagrant n=ansible | ...ignoring
+2024-12-22 13:39:46,138 p=876 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:39:47,288 p=876 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:39:47,315 p=876 u=vagrant n=ansible | RUNNING HANDLER [Redémarrer le service réseau (si nécessaire)] *********************************************************************************************
+2024-12-22 13:39:49,277 p=876 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (ansible.legacy.systemd) module: when. Supported parameters include: enabled, name (service, unit), force, no_block, state, scope, daemon_reload (daemon-reload), daemon_reexec (daemon-reexec), masked."}
+2024-12-22 13:39:49,279 p=876 u=vagrant n=ansible | NO MORE HOSTS LEFT *****************************************************************************************************************************************
+2024-12-22 13:39:49,283 p=876 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:39:49,284 p=876 u=vagrant n=ansible | vm2                        : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-22 13:41:27,025 p=921 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:41:27,058 p=921 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:41:28,940 p=921 u=vagrant n=ansible | ok: [localhost]
+2024-12-22 13:41:28,972 p=921 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:41:29,584 p=921 u=vagrant n=ansible | fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["grep", "127.0.0.1 henallux.local", "/etc/hosts"], "delta": "0:00:00.009558", "end": "2024-12-22 13:41:29.528738", "msg": "non-zero return code", "rc": 1, "start": "2024-12-22 13:41:29.519180", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-12-22 13:41:29,584 p=921 u=vagrant n=ansible | ...ignoring
+2024-12-22 13:41:29,605 p=921 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:41:30,223 p=921 u=vagrant n=ansible | changed: [localhost]
+2024-12-22 13:41:30,238 p=921 u=vagrant n=ansible | RUNNING HANDLER [Redémarrer le service réseau] *************************************************************************************************************
+2024-12-22 13:41:30,284 p=921 u=vagrant n=ansible | fatal: [localhost]: FAILED! => {"msg": "The conditional check 'ansible_facts.os.family == \"Debian\"' failed. The error was: error while evaluating conditional (ansible_facts.os.family == \"Debian\"): 'dict object' has no attribute 'os'\n\nThe error appears to be in '/home/vagrant/projet-ansible/playbook4.yml': line 21, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  handlers:\n    - name: Redémarrer le service réseau\n      ^ here\n"}
+2024-12-22 13:41:30,286 p=921 u=vagrant n=ansible | NO MORE HOSTS LEFT *****************************************************************************************************************************************
+2024-12-22 13:41:30,288 p=921 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:41:30,290 p=921 u=vagrant n=ansible | localhost                  : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-22 13:50:52,809 p=1045 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:50:52,835 p=1045 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:50:54,993 p=1045 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 13:50:55,023 p=1045 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:50:55,826 p=1045 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:50:55,842 p=1045 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:50:55,874 p=1045 u=vagrant n=ansible | skipping: [vm2]
+2024-12-22 13:50:55,911 p=1045 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:50:55,911 p=1045 u=vagrant n=ansible | vm2                        : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-12-22 13:52:18,743 p=1075 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:52:18,767 p=1075 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:52:21,005 p=1075 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 13:52:21,043 p=1075 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:52:21,861 p=1075 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": true, "cmd": ["grep", "127.0.0.1 henallux.local", "/etc/hosts"], "delta": "0:00:00.007708", "end": "2024-12-22 13:52:21.783871", "msg": "non-zero return code", "rc": 1, "start": "2024-12-22 13:52:21.776163", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-12-22 13:52:21,861 p=1075 u=vagrant n=ansible | ...ignoring
+2024-12-22 13:52:21,882 p=1075 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:52:22,733 p=1075 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:52:22,753 p=1075 u=vagrant n=ansible | RUNNING HANDLER [Redémarrer le service réseau] *************************************************************************************************************
+2024-12-22 13:52:22,842 p=1075 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"msg": "The conditional check 'ansible_facts.os.family == \"Debian\"' failed. The error was: error while evaluating conditional (ansible_facts.os.family == \"Debian\"): 'dict object' has no attribute 'os'\n\nThe error appears to be in '/home/vagrant/projet-ansible/playbook4.yml': line 21, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  handlers:\n    - name: Redémarrer le service réseau\n      ^ here\n"}
+2024-12-22 13:52:22,843 p=1075 u=vagrant n=ansible | NO MORE HOSTS LEFT *****************************************************************************************************************************************
+2024-12-22 13:52:22,846 p=1075 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:52:22,846 p=1075 u=vagrant n=ansible | vm2                        : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2024-12-22 13:55:31,076 p=5487 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:55:31,134 p=5487 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:55:34,244 p=5487 u=vagrant n=ansible | ok: [localhost]
+2024-12-22 13:55:34,288 p=5487 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:55:35,320 p=5487 u=vagrant n=ansible | changed: [localhost]
+2024-12-22 13:55:35,344 p=5487 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:55:35,404 p=5487 u=vagrant n=ansible | skipping: [localhost]
+2024-12-22 13:55:35,507 p=5487 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:55:35,509 p=5487 u=vagrant n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-12-22 13:55:58,470 p=6395 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:55:58,817 p=6395 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:56:02,286 p=6395 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 13:56:02,563 p=6395 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:56:04,186 p=6395 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:56:04,300 p=6395 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:56:04,397 p=6395 u=vagrant n=ansible | skipping: [vm2]
+2024-12-22 13:56:04,440 p=6395 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:56:04,441 p=6395 u=vagrant n=ansible | vm2                        : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-12-22 13:56:32,945 p=6905 u=vagrant n=ansible | PLAY [Modifier le fichier /etc/hosts pour ajouter une entrée pour henallux.local] **************************************************************************
+2024-12-22 13:56:33,047 p=6905 u=vagrant n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-12-22 13:56:36,595 p=6905 u=vagrant n=ansible | ok: [vm2]
+2024-12-22 13:56:36,763 p=6905 u=vagrant n=ansible | TASK [Vérifier si l'entrée existe déjà dans /etc/hosts] ****************************************************************************************************
+2024-12-22 13:56:38,395 p=6905 u=vagrant n=ansible | fatal: [vm2]: FAILED! => {"changed": true, "cmd": ["grep", "127.0.0.1 henallux.local", "/etc/hosts"], "delta": "0:00:00.012376", "end": "2024-12-22 13:56:38.243304", "msg": "non-zero return code", "rc": 1, "start": "2024-12-22 13:56:38.230928", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-12-22 13:56:38,395 p=6905 u=vagrant n=ansible | ...ignoring
+2024-12-22 13:56:38,443 p=6905 u=vagrant n=ansible | TASK [Ajouter l'entrée dans /etc/hosts si elle n'existe pas] ***********************************************************************************************
+2024-12-22 13:56:39,831 p=6905 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:56:39,856 p=6905 u=vagrant n=ansible | RUNNING HANDLER [Redémarrer le service réseau] *************************************************************************************************************
+2024-12-22 13:56:44,714 p=6905 u=vagrant n=ansible | changed: [vm2]
+2024-12-22 13:56:44,863 p=6905 u=vagrant n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-12-22 13:56:44,863 p=6905 u=vagrant n=ansible | vm2                        : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
